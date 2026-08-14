@@ -1,11 +1,36 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+<div class="relative min-h-screen bg-[#2c2b2b]">
+	<div class="pointer-events-none absolute inset-6 border border-[#ffffff] rounded-lg"></div>
+
+		<div class="flex min-h-screen flex-col items-center pt-12 pb-16">
+		<h1 class="text-[5vw] font-bold text-white">Top notch Swords!</h1>
+		<h2 class="mt-3 text-[2.7vw] text-[#ffd8bd]">I am Dora. If you want to know more about me, browse around a little.</h2>
+		<div class="mx-auto flex w-[80%] justify-center pt-20 gap-[5%]">
+			<div class="min-w-0 flex-1"><Card title="Longswords" text="Classic two-handers." color="#333333" titleColor="#cc8f77" textColor="#ffffff" href="/longswords" /></div>
+			<div class="min-w-0 flex-1"><Card title="Katanas" text="Folded a thousand times." color="#333333" titleColor="#cc8f77" textColor="#ffffff" href="/katanas" /></div>
+		</div>
+		<div class="mx-auto flex w-[40%] items-center justify-center pt-[5%] pb-[10%]">
+			<div class="relative min-w-0 flex-1">
+				<Card title="Daggers" text="For close encounters." color="#333333" titleColor="#cc8f77" textColor="#ffffff" hasVine hasCurvedVine href="/daggers"/>
+			</div>
+		</div>
+		
+		<div class="mx-auto flex w-[80%] flex-col items-center pt-[5%] gap-[5%]">
+			<h3 class=" mx-auto  text-[2.7vw] text-[#ffd8bd]"> Contact me if you have any questions!</h3>		
+
+			<p class="flex gap-4 text-[2.7vw] text-[#ffd8bd]">
+				<a href="mailto:quackium@proton.me" class="underline hover:text-white">Email</a>		
+				<a href="https://www.linkedin.com/in/teodora-piel-199a18428" class="text-[#ffd8bd] underline hover:text-white"> LinkedIn </a> 
+			</p>
+		</div>
+	
+	</div>
+</div>
 </Layout>
+
