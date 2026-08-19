@@ -1,5 +1,5 @@
 {
-  "name": "my-site",
+  "name": "my-second-site",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/solid-js": "^7.0.2",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.2.0",
+    "astro": "^7.2.2",
     "solid-js": "^1.9.14",
     "tailwindcss": "^4.3.3"
   }
