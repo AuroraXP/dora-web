@@ -1,65 +1,92 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Row from '../components/row.astro';
+import Row2 from '../components/row2.astro';
+import Row3 from '../components/row3.astro';
 import Explorer from '../assets/explorer.png';
 
 ---
 
 <Layout title="Home">
   <!-- Section 1: grows with its content -->
-  <div class="relative bg-[#ffffff]">
+  <div class="relative bg-[#ffffff] dark:bg-[#222222]">
     <div class="flex flex-col items-center pt-12 pb-16">
-	<h1 class="mt-3 text-[4.5vw] sm:text-[2.7vw] px-[10vw] lg:text-[2vw] text-left text-[#222222]">
+	<h1 class="mt-3 text-[4.5vw] sm:text-[2.7vw] px-[10vw] lg:text-[2vw] text-left text-[#222222] dark:text-[#ffffff]">
         Hello!<br />
 		I am Dora. If you want to know more about me, browse around a little.
 		This is my personal website, where I share my projects, thoughts, and experiences. Feel free to explore and get in touch if you have any questions or just want to say hi!
       </h1>
-	<p class="flex gap-4 text-[4.5vw] sm:text-[2.7vw] text-[#343434] pt-[2vw]">
-				<a href="mailto:quackium@proton.me" class="underline hover:text-[#7d7d7d]">Email</a>		
-				<a href="https://www.linkedin.com/in/teodora-piel-199a18428" class="text-[#343434] underline hover:text-[#7d7d7d]"> LinkedIn </a> 
-			</p>
+	<p class="flex gap-[5vw] text-[4.5vw] sm:text-[2.7vw] text-[#343434] pt-[4vw] dark:text-[#cccccc]">
+		<a
+			href="mailto:quackium@proton.me"
+			class=" px-[3vw] py-[1vw] border border-black text-black z-0 hover:text-[#7d7d7d] hover: hover:scale-110 ">
+			Email
+		</a>
+		<a
+			href="https://www.linkedin.com/in/teodora-piel-199a18428"
+			class=" px-[3vw] py-[1vw] border border-black text-black z-0 hover:text-[#7d7d7d] hover: hover:scale-110">
+			LinkedIn
+		</a>
+	</p>
 		</div>
   </div>
 
 
 
   <!-- Section 2: starts immediately after -->
-  <div class="relative min-h-screen py-[15vw] bg-[#fff4e6]">
-    <h2 class=" font-sans mt-3 text-[8vw] sm:text-[3.5vw] px-[10vw] pl-[8vw]  text-[#160066]">
-      Academic Career
+  <div class="relative py-[15vw] bg-[#fff4e6] dark:bg-[#222222]">
+    <h2 class=" font-sans mt-3 text-[8vw] sm:text-[3.5vw] px-[10vw] pl-[8vw]  text-[#160066] dark:text-[#ffffff] translate-y-[-4vw]">
+      01 Academic Career
+    </h2>	
+	
+	<Row2 
+	col1="2024 - 2026" 
+	col2Top="RWTH Aachen University" 
+	col2Bottom="Master of Science in Chemistry" 
+	/>
+	
+	<Row2
+	col1="2020 - 2024" 
+	col2Top="RWTH Aachen University" 
+	col2Bottom="Bachelor of Science in Chemistry" 
+	/>
+</div>	
+	<!-- Section 3: starts immediately after -->
+  <div class="relative min-h-screen bg-[#fff4e6] dark:bg-[#222222]">
+    <h2 class=" font-sans text-[8vw] sm:text-[3.5vw] px-[10vw] pl-[8vw]  text-[#160066] dark:text-[#ffffff] translate-y-[-5vw]">
+      02 Work Experience
     </h2>
-	<Row 
+	<Row3
 	col1="November 2025 - Mai 2026" 
 	col2Top="RWTH Aachen University" 
 	col2Bottom="Master Thesis" 
 	col3="Automatization of crystallographic workflows. 
 		Plugin development for the Olex2 Crystallography Software." 
 	/>
-	<Row 
+	<Row3 
 	col1="April 2025 - August 2025" 
 	col2Top="RWTH Aachen University" 
 	col2Bottom="Research Internship" 
 	col3="Benchmarking of a novel Partitioning Scheme for Crystal Refinement." 
 	/>
-	<Row 
+	<Row3 
 	col1="March 2024 - October 2024" 
 	col2Top="RWTH Aachen University" 
 	col2Bottom="Research Assistant" 
 	col3="Coordination Chemistry & Ligand Synthesis." 
 	/>
-	<Row 
+	<Row3 
 	col1="June 2024 - September 2024" 
 	col2Top="RWTH Aachen University" 
 	col2Bottom="Research Internship" 
 	col3="Solid-State Chemistry & Single-Crystal Synthesis." 
 	/>
-	<Row 
+	<Row3 
 	col1="November 2023 - February 2024" 
 	col2Top="RWTH Aachen University" 
 	col2Bottom="Bachelor Thesis" 
 	col3="Synthesis and Characterization of Complexes for PET Scan Application." 
 	/>
-	<Row 
+	<Row3 
 	col1="April 2023 - June 2023" 
 	col2Top="RWTH Aachen University" 
 	col2Bottom="Student Research Internship" 
@@ -67,19 +94,28 @@ import Explorer from '../assets/explorer.png';
 	/>
 
   </div>
-<img src={Explorer.src} alt="Explorer" class="relative bottom-[10vw] w-full" />
-<h1 class="text-[4.5vw] sm:text-[4vw] px-[8vw] lg:text-[2vw] text-left text-[#ffffff] translate-y-[-20vw]">
+<img src={Explorer.src} alt="Explorer" class="relative w-full" />
+<!-- <h1 class="text-[4.5vw] sm:text-[4vw] px-[8vw] lg:text-[2vw] text-left text-[#ffffff] dark:text-[#222222] translate-y-[-20vw]">
 		Master of Science in Chemistry
-	  </h1>
-<div class="relative py-[5vw] translate-y-[-20vw] bg-[#fff4e6]">
+	  </h1> -->
+<div class="relative py-[5vw] translate-y-[-20vw] bg-[#fff4e6] dark:bg-[#222222]">
 
   <a
-    href="behind-the-scenes.astro"
+    href="/behind-the-scenes"
     class="absolute left-[8vw] top-1/2 -translate-y-1/2 
            px-[3vw] py-[1vw] 
-           bg-[#fff4e6] border border-black text-black
-           z-0 hover:text-[#7d7d7d] hover:px-[4vw] hover:py-[2vw] ">
+           bg-[#fff4e6] border border-black text-black 
+           z-0 hover:text-[#7d7d7d] sm:text-[2.5vw] hover:scale-110 ">
     Behind the scenes
+  </a>
+
+    <a
+    href="/explore-reasoning"
+    class="absolute right-[8vw] top-1/2 -translate-y-1/2 
+           px-[3vw] py-[1vw] 
+           bg-[#fff4e6] border border-black text-black 
+           z-0 hover:text-[#7d7d7d] sm:text-[2.5vw] hover:scale-110 ">
+    Explore Reasoning
   </a>
 
 </div>
