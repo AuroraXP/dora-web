@@ -7,10 +7,9 @@ interface Props {
 }
 const { col1, col2Top, col2Bottom} = Astro.props;
 ---
-<div class="grid gap-[2vw] pt-[8vw] px-[8vw] py-[4vw] grid-cols-1 sm:gap-[4vw] sm:grid-cols-[0.4fr_1fr] sm:px-[12vw] sm:py-[3vw] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]
-            lg:border-x lg:border-[#414141]">
+<div class="grid gap-[2vw] pt-[8vw] px-[8vw] py-[4vw] grid-cols-1 sm:gap-[4vw] sm:grid-cols-[0.4fr_1fr] sm:px-[12vw] sm:py-[3vw] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
 
-  <div class="font-sans text-[4vw] sm:text-[1.8vw] lg:text-[20px] text-black translate-y-[4vw]">{col1}</div>
+  <div class="font-sans text-[4vw] sm:text-[1.8vw] lg:text-[20px] text-black">{col1}</div>
 
   <div class="flex flex-col sm:gap-[0.5vw] gap-[0.5vw]">
     <span class="font-sans text-[4vw] sm:text-[1.8vw] lg:text-[20px] text-left text-black">{col2Top}</span>
