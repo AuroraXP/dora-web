@@ -1,21 +1,96 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ModeChange from '../components/mode-change.astro';
+import FlipCard from '../components/FlipCard.astro';
+import Button from '../components/button.astro';
+
+
 ---
 
 <Layout title="Home">
   <!-- Section 1: grows with its content -->
-  <div class="relative bg-[#ffffff]">
+<!-- <div class="lg:border-x-[15vw] lg:border-[#efd0b4] dark:border-[#1a3721] lg:w-full"> -->
+
+  <div class="relative bg-[#ffffff] dark:bg-[#000000] ">
+	<ModeChange />
     <div class="flex flex-col items-center pt-12 pb-16">
-	<h1 class="mt-3 text-[4.5vw] sm:text-[2.7vw] px-[10vw] lg:text-[2vw] text-left text-[#222222]">
-        Hello!<br />
-		I am Dora. If you want to know more about me, browse around a little.
-		This is my personal website, where I share my projects, thoughts, and experiences. Feel free to explore and get in touch if you have any questions or just want to say hi!
-      </h1>
-	<p class="flex gap-4 text-[4.5vw] sm:text-[2.7vw] text-[#343434] pt-[2vw]">
-				<a href="mailto:quackium@proton.me" class="underline hover:text-[#7d7d7d]">Email</a>		
-				<a href="https://www.linkedin.com/in/teodora-piel-199a18428" class="text-[#343434] underline hover:text-[#7d7d7d]"> LinkedIn </a> 
-			</p>
-		</div>
+		<h1 class="mt-25  px-[10vw] text-[23px] text-left text-[#222222] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
+        	This page is still a work in progress. <br />
+			Here you will find my projects, hobbies and interests.<br />
+			Swipe through the cards to explore my work and click to learn more.
+      	</h1>
+	</div>
   </div>
 
-</Layout>  
+<!-- Section 2: card deck -->
+<div class="relative py-[10vw] lg:py-[6vw] bg-[#fff4e6] dark:bg-[#222222]">
+	<h2 class="font-sans text-[35px] pl-[8vw] text-[#160066] dark:text-[#ffffff] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
+		Projects & Interests
+	</h2>
+
+	<!-- deck: flex row, overlapping, centered -->
+	<div class="flex justify-center -space-x-[10vw] mt-[6vw] lg:mt-[3vw] lg:max-w-[70vw] lg:mx-auto">
+
+		<!-- top of pile (leftmost) -->
+
+		<div class="relative z-[70] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
+			<FlipCard title="Coding" text="Only took up coding recently, but it opened a world of possibilities."
+				color="#FFF0DB" darkColor="#282224" titleColor="#160066" textColor="#414141" backColor="#1a1a1a" 
+				darkBackColor="#ffefe8" backTextColor="#ffefe8" darkBackTextColor="#1a1a1a">
+				<div slot="back"><p>Learning how to code, has meant relearning to love solving complex problems with nothing but a computer and curiosity. More about my coding journey here.<br />
+				  <br />
+
+				</p>
+
+
+					<div class="center bottom-[3px]">
+						<Button link="/explore-reasoning" text="Explore Reasoning" />
+					</div>
+				</div>
+			</FlipCard>
+		</div>
+
+		<div class="relative z-[60] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
+			<FlipCard title="Sports" text="Now on hold. But there is a variety I am pationate about."
+				color="#fff5e6" titleColor="#160066" textColor="#414141" darkColor="#343434" backColor="#1a1a1a" 
+				darkBackColor="#ffefe8" backTextColor="#ffefe8" darkBackTextColor="#1a1a1a">
+				<div slot="back"><p>I enjoy a variety of sports, but only as a hobby. One of my favorite sports are ice skating and skiing. </p></div>
+			</FlipCard>
+		</div>
+
+		<div class="relative z-[50] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
+			<FlipCard title="Painting" text="Where there is free time, there is art."
+				color="#FFEFD5" darkColor="#34282C" titleColor="#160066" textColor="#414141" backColor="#1a1a1a" 
+				darkBackColor="#ffefe8" backTextColor="#ffefe8" darkBackTextColor="#1a1a1a">
+				<div slot="back"><p>Photo stories coming soon.</p></div>
+			</FlipCard>
+		</div>
+
+		<div class="relative z-[40] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
+			<FlipCard title="Creative Writing" text="Exploring fantastical stories and narratives."
+				color="#F7E7CE" darkColor="#3B3131" titleColor="#160066" textColor="#414141" backColor="#1a1a1a" 
+				darkBackColor="#ffefe8" backTextColor="#ffefe8" darkBackTextColor="#1a1a1a">
+				<div slot="back"><p>Writing stories falls short in most cases due to the lack of time, but I do enjoy it.</p></div>
+			</FlipCard>
+		</div>
+
+		<div class="relative z-[30] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
+			<FlipCard title="Baking" text="Creating delicious treats and breads. Chemistry in the kitchen."
+				color="#FFEBCD" darkColor="#343434" titleColor="#160066" textColor="#414141" backColor="#1a1a1a" 
+				darkBackColor="#ffefe8" backTextColor="#ffefe8" darkBackTextColor="#1a1a1a">
+				<div slot="back"><p>Photo stories coming soon.</p></div>
+			</FlipCard>
+		</div>
+
+
+		<div class="relative z-[20] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
+			<FlipCard title="Video Games and Books" text="There is a variety of worlds to explore."
+				color="#fff1e6" darkColor="#343434" titleColor="#160066" textColor="#414141" backColor="#1a1a1a" 
+				darkBackColor="#ffefe8" backTextColor="#ffefe8" darkBackTextColor="#1a1a1a">
+				<div slot="back"><p>Writing a little game in my free time, that should be an interesting project!</p></div>
+			</FlipCard>
+		</div>
+
+	</div>
+</div>
+	</Layout>

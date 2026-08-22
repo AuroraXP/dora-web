@@ -1,0 +1,38 @@
+---
+// src/components/Card.astro
+
+import { Image } from 'astro:assets';
+import longVine from '../assets/long-vine.png';
+import curvedVine from '../assets/curved-vine.png';
+
+const {
+  title,
+  text,
+  color = '#ffefe8',
+  titleColor = '#1a1a1a',
+  textColor = '#1a1a1a',
+  hasVine = false,
+  hasCurvedVine = false,
+  href = '#',
+} = Astro.props;
+---
+<a href={href} class="group @container relative flex aspect-square w-full flex-col items-center rounded-lg justify-center border border-white p-6 text-center shadow-xl shadow-black/70 transition-all duration-200 hover:scale-110 hover:shadow-2xl" style={`background-color: ${color}`}>
+  <h2 class="text-[3vw]" style={`color: ${titleColor}`}>{title}</h2>
+  <p class="mt-2 text-[2vw]" style={`color: ${textColor}`}>{text}</p>
+
+{hasVine && (
+  <Image
+    src={longVine}
+    alt=""
+    class="pointer-events-none absolute left-2 top-1/2 h-1/3 w-auto -translate-x-1/2 -translate-y-1/2 rotate-90 object-contain transition-transform duration-200 group-hover:"
+  />
+)}
+
+{hasCurvedVine && (
+  <Image
+    src={curvedVine}
+    alt=""
+    class="pointer-events-none absolute bottom-3 right-0 h-1/3 w-auto translate-x-1/4 translate-y-1/4 object-contain transition-transform duration-200 group-hover:"
+  />
+)}
+</a>

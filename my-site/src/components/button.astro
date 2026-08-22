@@ -1,0 +1,15 @@
+---
+// src/components/button.astro
+
+interface Props {
+  link: string;
+  text: string;
+}
+
+const { link, text } = Astro.props;
+---
+<a
+    href={link}
+    class="inline-block px-[3vw] py-[1vw] border border-black text-black dark:border-[#cccccc] dark:text-[#0da200] z-0 hover:text-[#ab3c00] dark:hover:text-[#15ff00] dark:hover:border-white hover:scale-110 text-[23px]">
+    {text}
+</a>

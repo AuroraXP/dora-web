@@ -3,34 +3,28 @@ import Layout from '../layouts/Layout.astro';
 import Row2 from '../components/row2.astro';
 import Row3 from '../components/row3.astro';
 import Explorer from '../assets/explorer.png';
+import Button from '../components/button.astro';
+import ModeChange from '../components/mode-change.astro';
 
 ---
 
 <Layout title="Home">
   <!-- Section 1: grows with its content -->
-   <div class="lg:border-x-[15vw] lg:border-[#efd0b4] lg:w-full">
+<!-- <div class="lg:border-x-[15vw] lg:border-[#efd0b4] dark:border-[#1a3721] lg:w-full"> -->
 
-  <div class="relative bg-[#ffffff] dark:bg-[#222222] ">
+  <div class="relative bg-[#ffffff] dark:bg-[#000000] ">
+	<ModeChange />
     <div class="flex flex-col items-center pt-12 pb-16">
-	<h1 class="mt-3  px-[10vw] text-[23px] text-left text-[#222222] dark:text-[#ffffff] lg:max-w-[70vw] lg:mx-auto lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
-        Hello!<br />
-		I am Dora. If you want to know more about me, browse around a little.
-		This is my personal website, where I share my projects, thoughts, and experiences. Feel free to explore and get in touch if you have any questions or just want to say hi!
+	<h1 class="mt-25  px-[10vw] text-[23px] text-left text-[#222222] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
+        Welcome. Welcome.<br />
+		This is Dora's personal website. In here you will find information about me, my experience, projects, as well as my thoughts and ideas. 
+		Feel free to explore and get in touch!
       </h1>
 	<p class="flex gap-[5vw] text-[#343434] pt-[4vw] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto">
-		<a
-			href="mailto:quackium@proton.me"
-			class=" px-[3vw] py-[1vw] border border-black text-black z-0 hover:text-[#7d7d7d] hover: hover:scale-110 text-[23px]">
-			Email
-		</a>
-		<a
-			href="https://www.linkedin.com/in/teodora-piel-199a18428"
-			class=" px-[3vw] py-[1vw] border border-black text-black z-0 hover:text-[#7d7d7d] hover: hover:scale-110 text-[23px]">
-			LinkedIn
-		</a>
+		<Button link="mailto:quackium@proton.me" text="Email" />
+		<Button link="https://www.linkedin.com/in/teodora-piel-199a18428" text="LinkedIn" />
 	</p>
-		</div>
-  </div>
+</div>
 
 
 
@@ -62,8 +56,8 @@ import Explorer from '../assets/explorer.png';
 		col1="November 2025 - Mai 2026" 
 		col2Top="RWTH Aachen University" 
 		col2Bottom="Master Thesis" 
-		col3="Automatization of crystallographic workflows. 
-			Plugin development for the Olex2 Crystallography Software." 
+		col3="Automatization of crystallographic workflows using machine learning tools. 
+			Early Plugin development for the Olex2 Crystallography Software using Python." 
 		/>
 		<Row3 
 		col1="April 2025 - August 2025" 
@@ -105,23 +99,14 @@ import Explorer from '../assets/explorer.png';
 			Master of Science in Chemistry
 		</h1> -->
 	<div class="relative py-[5vw] lg:py-[3vw] mt-[-20vw] lg:mt-[-10vw] bg-[#fff4e6] dark:bg-[#222222] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
-		<a
-			href="/behind-the-scenes"
-			class="absolute left-[8vw] text-[20px] lg:text-[23px] top-1/2 -translate-y-1/2 
-				px-[3vw] py-[1vw] 
-				bg-[#fff4e6] border border-black text-black 
-				z-0 hover:text-[#7d7d7d] sm:text-[2.5vw] hover:scale-110 ">
-			Behind the scenes
-		</a>
+		
+		<div class="absolute left-[8vw] top-1/2 -translate-y-1/2">
+			<Button link="/behind-the-scenes" text="Behind the Scenes" />
+		</div>
 
-			<a
-			href="/explore-reasoning"
-			class="absolute right-[8vw] text-[20px] lg:text-[23px] top-1/2 -translate-y-1/2 
-				px-[3vw] py-[1vw] 
-				bg-[#fff4e6] border border-black text-black 
-				z-0 hover:text-[#7d7d7d] sm:text-[2.5vw] hover:scale-110 ">
-			Explore Reasoning
-		</a>
+		<div class="absolute right-[8vw] top-1/2 -translate-y-1/2">
+			<Button link="/explore-reasoning" text="Explore Reasoning" />
+		</div>
 
 		</div>
 	</div>
