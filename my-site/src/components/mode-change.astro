@@ -1,0 +1,26 @@
+---
+// src/components/mode-change.astro
+---
+
+<p class="absolute text-[#343434] pt-[4vw] right-[5vw] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto">
+	<button
+		id="theme-toggle"
+		class="px-[3vw] py-[1vw] border border-black dark:border-white text-black dark:text-white z-0 hover:text-[#7d7d7d] dark:hover:text-[#aaaaaa] hover:scale-110 text-[23px] cursor-pointer">
+		Mode Switch <span id="theme-icon">☀️</span>
+	</button>
+</p>
+
+<script>
+	const btn = document.getElementById('theme-toggle');
+	const icon = document.getElementById('theme-icon');
+
+	if (icon) {
+		icon.textContent = document.documentElement.classList.contains('dark') ? '🌙' : '☀️';
+	}
+
+	btn?.addEventListener('click', () => {
+		const isDark = document.documentElement.classList.toggle('dark');
+		localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		if (icon) icon.textContent = isDark ? '🌙' : '☀️';
+	});
+</script>
