@@ -11,16 +11,16 @@ const {
   color = '#ffefe8',
   darkColor = '#1a1a1a',
   titleColor = '#160066',
-  darkTitleColor = '#b9a7ff',
+  darkTitleColor = '#a2a9fc',
   textColor = '#414141',
   darkTextColor = '#cccccc',
-  backColor = '#1a1a1a',
-  darkBackColor = '#ffefe8',
-  backTextColor = '#ffefe8',
-  darkBackTextColor = '#1a1a1a',
+  backColor = '#fadebe',
+  darkBackColor = '#1a1a24',
+  backTextColor = '#222222',
+  darkBackTextColor = '#cccccc',
   hasVine = false,
   hasCurvedVine = false,
-  size = 'w-[20vw]',
+  size = 'w-[280px]',
 } = Astro.props;
 ---
 
@@ -37,7 +37,7 @@ const {
     --card-back-bg-dark: ${darkBackColor};
     --card-back-text: ${backTextColor};
     --card-back-text-dark: ${darkBackTextColor};
-  `}>
+  `}> <!-- For most variables standard cosistency seems is the best design choice >> Keeping them for now just in case -->
   <div class="flip-inner relative h-full w-full transition-transform duration-500 transform-3d">
 
     <!-- FRONT -->
@@ -58,9 +58,9 @@ const {
 
     <!-- BACK -->
     <div
-      class="absolute inset-0 flex flex-col items-center justify-center rounded-lg border border-black dark:border-[#ffffff] p-3 text-center shadow-xl shadow-black/70 dark:shadow-black backface-hidden rotate-y-180 overflow-hidden bg-(--card-back-color-[]) dark:bg-(--card-back-bg-dark) text-(--card-back-text) dark:text-(--card-back-text-dark)">
+      class="absolute inset-0 flex flex-col items-center justify-center rounded-lg border border-black dark:border-[#ffffff] p-3 text-center text-[18px] shadow-xl shadow-black/70 dark:shadow-black backface-hidden rotate-y-180 overflow-hidden bg-(--card-back-bg) dark:bg-(--card-back-bg-dark) text-(--card-back-text) dark:text-(--card-back-text-dark)">
       <slot name="back">
-        <p class="text-[12px]">Nothing here yet…</p>
+        <p class="text-[18px]">Nothing here yet…</p>
       </slot>
     </div>
 
