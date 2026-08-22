@@ -13,6 +13,15 @@ import Button from '../components/button.astro';
 
   <div class="relative bg-[#ffffff] dark:bg-[#000000] ">
 	<ModeChange />
+
+	<p class="absolute text-[#343434] pt-[4vw] left-[5vw] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto">
+		<a
+			href={"/index"}
+			class="inline-block px-[3vw] py-[1vw] border border-black text-black dark:border-[#cccccc] dark:text-white z-0 hover:text-[#ab3c00] dark:hover:text-[#7d7d7d] dark:hover:border-[#aaaaaa] hover:scale-110 text-[23px]">
+			Home
+		</a>
+	</p>
+
     <div class="flex flex-col items-center pt-12 pb-16">
 		<h1 class="mt-25  px-[10vw] text-[23px] text-left text-[#222222] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
         	This page is still a work in progress. <br />
@@ -29,22 +38,23 @@ import Button from '../components/button.astro';
 	</h2>
 
 	<!-- deck: flex row, overlapping, centered -->
-	<div class="flex justify-center -space-x-[10vw] mt-[6vw] lg:mt-[3vw] lg:max-w-[70vw] lg:mx-auto">
+<div class="grid grid-cols-1 justify-items-center gap-6
+            md:grid-cols-[repeat(6,clamp(80px,11vw,140px))] md:justify-center md:gap-0
+            mt-[6vw] md:mt-[3vw] mx-auto">
 
 		<!-- top of pile (leftmost) -->
 
 		<div class="relative z-[70] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
 			<FlipCard title="Coding" text="Only took up coding recently, but it opened a world of possibilities."
-				color="#FFF0DB" darkColor="#282224" titleColor="#160066" textColor="#414141" backColor="#1a1a1a" 
-				darkBackColor="#ffefe8" backTextColor="#ffefe8" darkBackTextColor="#1a1a1a">
-				<div slot="back"><p>Learning how to code, has meant relearning to love solving complex problems with nothing but a computer and curiosity. More about my coding journey here.<br />
-				  <br />
-
-				</p>
-
-
-					<div class="center bottom-[3px]">
-						<Button link="/explore-reasoning" text="Explore Reasoning" />
+				color="#FFF0DB" darkColor="#282224">
+				<div slot="back"><p>Learning how to code, has meant relearning to love solving complex problems with nothing but a computer and curiosity.<br />
+					</p>
+					<div class="center pt-[2vw]">
+						<a
+							href={"/behind-the-scenes"}
+							class="inline-block px-[3vw] py-[1vw] border border-black text-black dark:border-[#cccccc] dark:text-[#65c0c6] z-0 hover:text-[#ab3c00] dark:hover:text-[#00eaff] dark:hover:border-white hover:scale-110 text-[20px]">
+							Behind the scenes
+						</a>					
 					</div>
 				</div>
 			</FlipCard>
@@ -52,32 +62,28 @@ import Button from '../components/button.astro';
 
 		<div class="relative z-[60] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
 			<FlipCard title="Sports" text="Now on hold. But there is a variety I am pationate about."
-				color="#fff5e6" titleColor="#160066" textColor="#414141" darkColor="#343434" backColor="#1a1a1a" 
-				darkBackColor="#ffefe8" backTextColor="#ffefe8" darkBackTextColor="#1a1a1a">
-				<div slot="back"><p>I enjoy a variety of sports, but only as a hobby. One of my favorite sports are ice skating and skiing. </p></div>
+				color="#fff5e6" titleColor="#160066">
+				<div slot="back"><p>I enjoy a variety of sports, but only as a hobby. One of my favorite sports is ice skating. </p></div>
 			</FlipCard>
 		</div>
 
 		<div class="relative z-[50] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
 			<FlipCard title="Painting" text="Where there is free time, there is art."
-				color="#FFEFD5" darkColor="#34282C" titleColor="#160066" textColor="#414141" backColor="#1a1a1a" 
-				darkBackColor="#ffefe8" backTextColor="#ffefe8" darkBackTextColor="#1a1a1a">
+				color="#FFEFD5" darkColor="#34282C">
 				<div slot="back"><p>Photo stories coming soon.</p></div>
 			</FlipCard>
 		</div>
 
 		<div class="relative z-[40] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
 			<FlipCard title="Creative Writing" text="Exploring fantastical stories and narratives."
-				color="#F7E7CE" darkColor="#3B3131" titleColor="#160066" textColor="#414141" backColor="#1a1a1a" 
-				darkBackColor="#ffefe8" backTextColor="#ffefe8" darkBackTextColor="#1a1a1a">
+				color="#F7E7CE" darkColor="#3B3131">
 				<div slot="back"><p>Writing stories falls short in most cases due to the lack of time, but I do enjoy it.</p></div>
 			</FlipCard>
 		</div>
 
 		<div class="relative z-[30] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
 			<FlipCard title="Baking" text="Creating delicious treats and breads. Chemistry in the kitchen."
-				color="#FFEBCD" darkColor="#343434" titleColor="#160066" textColor="#414141" backColor="#1a1a1a" 
-				darkBackColor="#ffefe8" backTextColor="#ffefe8" darkBackTextColor="#1a1a1a">
+				color="#FFEBCD" darkColor="#343434">
 				<div slot="back"><p>Photo stories coming soon.</p></div>
 			</FlipCard>
 		</div>
@@ -85,8 +91,7 @@ import Button from '../components/button.astro';
 
 		<div class="relative z-[20] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
 			<FlipCard title="Video Games and Books" text="There is a variety of worlds to explore."
-				color="#fff1e6" darkColor="#343434" titleColor="#160066" textColor="#414141" backColor="#1a1a1a" 
-				darkBackColor="#ffefe8" backTextColor="#ffefe8" darkBackTextColor="#1a1a1a">
+				color="#fff1e6" darkColor="#404042">
 				<div slot="back"><p>Writing a little game in my free time, that should be an interesting project!</p></div>
 			</FlipCard>
 		</div>
