@@ -98,17 +98,16 @@ import ModeChange from '../components/mode-change.astro';
 	<!-- <h1 class="text-[4.5vw] sm:text-[4vw] px-[8vw] lg:text-[2vw] text-left text-[#ffffff] dark:text-[#222222] translate-y-[-20vw]">
 			Master of Science in Chemistry
 		</h1> -->
-	<div class="relative py-[5vw] lg:py-[3vw] mt-[-20vw] lg:mt-[-10vw] bg-[#fff4e6] dark:bg-[#222222] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
-		
-		<div class="absolute left-[8vw] top-1/2 -translate-y-1/2">
-			<Button link="/behind-the-scenes" text="Behind the Scenes" />
-		</div>
+	<div class="relative py-[0.8vw] lg:py-[0.8vw] mt-[5vw] sm:mt-[-20vw] lg:mt-[-10vw]
+				bg-[#fff4e6] dark:bg-[#222222] dark:border-y-black sm:border-y-4
+				lg:max-w-[70vw] lg:mx-auto px-[8vw]">
 
-		<div class="absolute right-[8vw] top-1/2 -translate-y-1/2">
-			<Button link="/explore-reasoning" text="Explore Reasoning" />
-		</div>
-
-		</div>
+	<div class="flex flex-col items-center gap-2
+				sm:flex-row sm:justify-between sm:items-center">
+		<Button link="/behind-the-scenes" text="Behind the Scenes" />
+		<Button link="/explore-reasoning" text="Explore Reasoning" />
 	</div>
   </div>
+</div>
+</div>
 </Layout>
