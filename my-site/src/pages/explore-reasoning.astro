@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ModeChange from '../components/mode-change.astro';
+import FlipCard from '../components/FlipCard.astro';
+import Button from '../components/button.astro';
+
+
+---
+
+<Layout title="Home">
+  <!-- Section 1: grows with its content -->
+<!-- <div class="lg:border-x-[15vw] lg:border-[#efd0b4] dark:border-[#1a3721] lg:w-full"> -->
+
+  <div class="relative bg-[#ffffff] dark:bg-[#000000] ">
+	<ModeChange />
+
+	<p class="absolute text-[#343434] pt-[4vw] left-[5vw] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto">
+		<a
+			href={"/"}
+			class="inline-block px-[3vw] py-[1vw] border border-black text-black dark:border-[#cccccc] dark:text-white z-0 hover:text-[#ab3c00] dark:hover:text-[#7d7d7d] dark:hover:border-[#aaaaaa] hover:scale-110 text-[23px]">
+			Home
+		</a>
+	</p>
+
+    <div class="flex flex-col items-center pt-12 pb-16">
+		<h1 class="mt-25  px-[10vw] text-[23px] text-left text-[#222222] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
+        	This page is still a work in progress. <br />
+			This is meant to give you a glimpse into my mind, my thoughts and my decisions.<br />
+			Click on the cards to learn more.
+      	</h1>
+	</div>
+  </div>
+
+<!-- Section 2: card deck -->
+<div class="relative py-[10vw] lg:py-[6vw] bg-[#fff4e6] dark:bg-[#222222]">
+	<h2 class="font-sans text-[35px] pl-[8vw] text-[#160066] dark:text-[#ffffff] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
+		Thoughts and Reasoning
+	</h2>
+
+	<!-- deck: flex row, overlapping, centered -->
+<div class="flex flex-wrap justify-center gap-x-[20px] gap-y-[40px] max-w-[860px] mx-auto pt-20">
+		<div class="relative z-[70] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
+			<FlipCard title=" Pursuit of Software Development"
+				color="#FFF0DB" darkColor="#282224" darkTitleColor="#ffffff" size="w-[400px] h-[600px]">
+				<div slot="back"><p>
+                    I have wanted to learn how to code for a long time, and during my master's program, I finally got the chance to dive deep into the world of programming. <br/> <br/> The combination of logic and creativity, or rather tackling complex problems and seeing the solutions materialize, can be almost addictive. Which is why I made my decision to finish my degree in Chemistry, learning as much as I can along the way and then pursuing a career in software development.<br /> <br />  I am currectly still starting out, but I am learning and improving every day, trying to tackle multiple projects and challenges to improve my skills. But now, I will have to start applying for jobs, to be able to get my first real experience in the field, beside any previous university projects I have tackled. 
+                </p>
+				</div>
+			</FlipCard>
+		</div>
+
+
+		<div class="relative z-[40] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
+			<FlipCard title="Projects, Skills and Ideas"
+				color="#F7E7CE" darkColor="#3B3131" darkTitleColor="#ffffff" size="w-[400px] h-[600px]">
+				<div slot="back">
+                    <p>During my time at university, I have been involved in multiple projects, some of which were part of my studies, and some of which were personal projects. <br /> <br /> For university projects, I have used Python for both data analysis and automation of workflows using supervised learning for Plugin Development. <br /> <br />
+                    My personal projects include this website, built using Astro and Tailwind CSS, and trying to develop a small browser game using Typescript. For now I am only scratching the surface of what programming can do, but I am excited to learn more, find new challenges and improve my skills. <br /> <br />  
+
+                    I have decided the game idea was not up to par so I will start again with a new idea soon. 
+                    </p>                
+                </div>
+			</FlipCard>
+		</div>
+
+
+	</div>
+</div>
+	</Layout>
