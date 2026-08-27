@@ -9,7 +9,10 @@
 		"dev": "astro dev --host",
 		"build": "astro build",
 		"preview": "astro preview",
-		"astro": "astro"
+		"astro": "astro",
+		"format": "biome format --write .",
+		"lint": "biome lint .",
+		"check": "biome check --write ."
 	},
 	"dependencies": {
 		"@astrojs/solid-js": "^7.0.2",
@@ -20,5 +23,6 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.10"
-	}
+	},
+	"preinstall": "npx only-allow pnpm"
 }
