@@ -1,26 +1,26 @@
 ---
 // src/components/FlipCard.astro
 
-import { Image } from 'astro:assets';
-import longVine from '../assets/long-vine.png';
-import curvedVine from '../assets/curved-vine.png';
+import { Image } from "astro:assets";
+import longVine from "../assets/long-vine.png";
+import curvedVine from "../assets/curved-vine.png";
 
 const {
-  title,
-  text,
-  color = '#ffefe8',
-  darkColor = '#1a1a1a',
-  titleColor = '#160066',
-  darkTitleColor = '#a2a9fc',
-  textColor = '#414141',
-  darkTextColor = '#cccccc',
-  backColor = '#fadebe',
-  darkBackColor = '#1a1a24',
-  backTextColor = '#222222',
-  darkBackTextColor = '#cccccc',
-  hasVine = false,
-  hasCurvedVine = false,
-  size = 'w-[280px]',
+	title,
+	text,
+	color = "#ffefe8",
+	darkColor = "#1a1a1a",
+	titleColor = "#160066",
+	darkTitleColor = "#a2a9fc",
+	textColor = "#414141",
+	darkTextColor = "#cccccc",
+	backColor = "#fadebe",
+	darkBackColor = "#1a1a24",
+	backTextColor = "#222222",
+	darkBackTextColor = "#cccccc",
+	hasVine = false,
+	hasCurvedVine = false,
+	size = "w-[280px]",
 } = Astro.props;
 ---
 
