@@ -1,0 +1,73 @@
+---
+// src/components/ImageFlipCard.astro
+import { Image } from 'astro:assets';
+
+interface Props {
+  front?: ImageMetadata;
+  back?: ImageMetadata;
+  alt?: string;
+  class?: string;
+}
+
+const { front, back, alt = '', class: className = 'aspect-square' } = Astro.props;
+---
+
+<div
+  class:list={[
+    'flip-card relative w-full cursor-pointer rounded-lg',
+    'transition-transform duration-500 ease-out',
+    'hover:scale-110 perspective-[1000px]',
+    className,
+  ]}
+  role="button"
+  tabindex="0"
+  aria-label={alt || 'Flip card'}
+>
+  <div class="flip-inner relative h-full w-full transition-transform duration-500 transform-3d ">
+
+    <!-- FRONT -->
+    <div class="absolute inset-0 overflow-hidden rounded-lg bg-black backface-hidden shadow-xl shadow-black/30 dark:shadow-black/60 border border-black">
+      {front && <Image src={front} alt={alt} class="h-full w-full object-cover" />}
+    </div>
+
+    <!-- BACK -->
+    <div class="absolute inset-0 overflow-hidden rounded-lg bg-black backface-hidden rotate-y-180 shadow-xl shadow-black/30 dark:shadow-black/60 border border-black ">
+      {back && <Image src={back} alt="" class="h-full w-full object-cover" />}
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+  function initFlipCards() {
+    document.querySelectorAll<HTMLElement>('.flip-card').forEach((card) => {
+      if (card.dataset.flipInit) return;
+      card.dataset.flipInit = 'true';
+
+      const inner = card.querySelector<HTMLElement>('.flip-inner');
+      if (!inner) return;
+
+      let flipped = false;
+      const flip = () => {
+        flipped = !flipped;
+        inner.style.transform = flipped ? 'rotateY(180deg)' : 'rotateY(0deg)';
+      };
+
+      card.addEventListener('click', flip);
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          flip();
+        }
+      });
+
+      card.querySelectorAll('img').forEach((img) => {
+        img.addEventListener('error', () => img.remove());
+      });
+    });
+  }
+
+  initFlipCards();
+  document.addEventListener('astro:page-load', initFlipCards);
+</script>
