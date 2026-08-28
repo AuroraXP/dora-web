@@ -15,21 +15,34 @@ import ModeChange from '../components/mode-change.astro';
   <div class="relative bg-[#ffffff] dark:bg-[#000000] ">
 	<ModeChange />
     <div class="flex flex-col items-center pt-12 pb-16">
-	<h1 class="mt-25  px-[10vw] text-[23px] text-left text-[#222222] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
-        Welcome. Welcome.<br />
+	<h1 class="mt-25  px-[10vw] text-[23px] text-left text-[#222222] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
+        <!-- Welcome. Welcome.<br /> -->
 		This is Dora's personal website. In here you will find information about me, my experience, projects, as well as my thoughts and ideas. 
 		Feel free to explore and get in touch!
       </h1>
-	<p class="flex gap-[5vw] text-[#343434] pt-[4vw] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto">
+	<div class="flex flex-col items-center gap-[5vw]
+			sm:flex-row sm:justify-between sm:items-center pt-10 ">
 		<Button link="mailto:quackium@proton.me" text="Email" />
 		<Button link="https://www.linkedin.com/in/teodora-piel-199a18428" text="LinkedIn" />
-	</p>
+		<!-- </div> -->
+
+	<!-- <h2 class="w-full px-[10vw] mt-10 text-[23px] text-left left-0 text-[#222222] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
+        You want more Information? 
+		You can find my CV and GitHub profile below. 
+      </h2> -->
+
+	<!-- <div class="flex flex-col items-center gap-[5vw]
+			sm:flex-row sm:justify-between sm:items-center pt-10 "> -->
+	  	<Button link="https://github.com/AuroraXP" text="GitHub" />
+		<Button link="documents/TeodoraPielCV.pdf" text="CV" />
+	</div>
+
 </div>
 
 
 
   <!-- Section 2: starts immediately after -->
-	<div class="relative py-[15vw] bg-[#fff4e6] dark:bg-[#222222]">
+	<div class="relative py-[10vw] bg-[#fff4e6] dark:bg-[#222222]">
 		<h2 class=" font-sans mt-3 text-[35px] px-[10vw] pl-[8vw]  text-[#160066] dark:text-[#ffffff] translate-y-[-4vw] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]
 	">
 		01 Academic Career
