@@ -2,7 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import ModeChange from '../components/mode-change.astro';
 import FlipCard from '../components/FlipCard.astro';
-import Button from '../components/button.astro';
+import MiniLight from '../assets/mini-me-dark.png';
+import MiniDark from '../assets/mini-me-light.png';
+import AngryMiniLight from '../assets/mini-annoyed-dark.png';
+import AngryMiniDark from '../assets/mini-annoyed-light.png';
+import FrontImage from '../assets/FrontImage.jpeg';
+import BackImage from '../assets/BackImage.jpg';
+import ImageFlipCard from '../components/ImageFlipCard.astro';
 
 
 ---
@@ -23,7 +29,7 @@ import Button from '../components/button.astro';
 	</p>
 
     <div class="flex flex-col items-center pt-12 pb-16">
-		<h1 class="mt-25  px-[10vw] text-[23px] text-left text-[#222222] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
+		<h1 class="mt-25  px-[10vw] text-[23px] text-left text-[#222222] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
         	This page is still a work in progress. <br />
 			Here you will find my projects, hobbies and interests.<br />
 			Swipe through the cards to explore my work and click to learn more.
@@ -31,9 +37,27 @@ import Button from '../components/button.astro';
 	</div>
   </div>
 
+<div class="relative bg-[#fff4e6] dark:bg-[#222222] pb-[12vw] md:pb-[8vw]">
+
+	<div class="flex items-center justify-center gap-[6vw]">
+
+		<!-- image -->
+		<div class="group relative w-35 sm:w-50 md:w-50 lg:w-50 shrink-0 sm:translate-y-[4vw] translate-y-[6vw]">
+			<div class="peer absolute inset-x-1/4 inset-y-1/4 z-10"></div>
+
+			<img src={MiniLight.src} alt="Miniature version of me" class="w-full block dark:hidden peer-hover:hidden" />
+			<img src={MiniDark.src} alt="Miniature version of me in dark mode" class="w-full hidden dark:block dark:peer-hover:hidden" />
+			<img src={AngryMiniLight.src} alt="Angry miniature version of me" class="w-full hidden peer-hover:block dark:peer-hover:hidden" />
+			<img src={AngryMiniDark.src} alt="Angry miniature version of me in dark mode" class="w-full hidden dark:peer-hover:block" />
+		</div>
+
+	<div class="w-40 sm:w-50 md:w-52 pt-7">
+	<ImageFlipCard front={FrontImage} back={BackImage} class="aspect-3/4" />
+	</div>
+	</div>
+
 <!-- Section 2: card deck -->
-<div class="relative py-[10vw] lg:py-[6vw] bg-[#fff4e6] dark:bg-[#222222]">
-	<h2 class="font-sans text-[35px] pl-[8vw] text-[#160066] dark:text-[#ffffff] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
+	<h2 class="font-sans text-[35px] pt-20 pl-[8vw] text-[#160066] dark:text-[#ffffff] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
 		Projects & Interests
 	</h2>
 
@@ -44,7 +68,7 @@ import Button from '../components/button.astro';
 
 		<!-- top of pile (leftmost) -->
 
-		<div class="relative z-[70] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
+		<div class="relative z-70 transition-all duration-200 hover:z-100 hover:scale-[1.05]">
 			<FlipCard title="Coding" text="Only took up coding recently, but it opened a world of possibilities."
 				color="#FFF0DB" darkColor="#282224">
 				<div slot="back"><p>Learning how to code, has meant relearning to love solving complex problems with nothing but a computer and curiosity.<br />
@@ -73,8 +97,7 @@ import Button from '../components/button.astro';
 				<div slot="back"><p>Photo stories coming soon.</p></div>
 			</FlipCard>
 		</div>
-
-		<div class="relative z-[40] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
+		<div class="relative z-[40] transition-all duration-200 hover:z-100 hover:scale-[1.05]">
 			<FlipCard title="Creative Writing" text="Exploring fantastical stories and narratives."
 				color="#F7E7CE" darkColor="#3B3131">
 				<div slot="back"><p>Writing stories falls short in most cases due to the lack of time, but I do enjoy it.</p></div>

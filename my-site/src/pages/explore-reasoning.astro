@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import ModeChange from '../components/mode-change.astro';
 import FlipCard from '../components/FlipCard.astro';
-import Button from '../components/button.astro';
 
 
 ---
@@ -38,27 +37,60 @@ import Button from '../components/button.astro';
 	</h2>
 
 	<!-- deck: flex row, overlapping, centered -->
-<div class="flex flex-wrap justify-center gap-x-[20px] gap-y-[40px] max-w-[860px] mx-auto pt-20">
-		<div class="relative z-[70] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
+<div class="flex flex-wrap justify-center gap-x-[20px] gap-y-[40px] max-w-[860px] mx-auto pt-20 px-4">
+  <div class="w-full max-w-[400px] relative z-[70] transition-all duration-200 hover:z-[100] md:hover:scale-[1.05]">
 			<FlipCard title=" Pursuit of Software Development"
-				color="#FFF0DB" darkColor="#282224" darkTitleColor="#ffffff" size="w-[400px] h-[600px]">
-				<div slot="back"><p>
-                    I have wanted to learn how to code for a long time, and during my master's program, I finally got the chance to dive deep into the world of programming. <br/> <br/> The combination of logic and creativity, or rather tackling complex problems and seeing the solutions materialize, can be almost addictive. Which is why I made my decision to finish my degree in Chemistry, learning as much as I can along the way and then pursuing a career in software development.<br /> <br />  I am currectly still starting out, but I am learning and improving every day, trying to tackle multiple projects and challenges to improve my skills. But now, I will have to start applying for jobs, to be able to get my first real experience in the field, beside any previous university projects I have tackled. 
-                </p>
+				color="#FFF0DB" darkColor="#282224" darkTitleColor="#ffffff" size="w-full max-w-[400px] h-[880px] min-[380px]:h-[780px] min-[440px]:h-[600px]">
+				<div slot="back">
+                    <div class="space-y-4">
+                    <p>
+                        I'd wanted to learn to code for a long time, and my master's program finally gave me
+                        the chance to dive in properly.
+                    </p>
+
+                    <p>
+                        Programming turned out to be a mix of logic and creativity. It makes it possible to tackle complex problems and watching the solution
+                        take shape piece by piece. This is what makes programming addictive. That's what made the decision simple: finish my
+                        degree in Chemistry, learn as much as I could along the way, and then move into
+                        software development. My master's thesis surprised me by bringing both worlds together, and I came out of it stronger in each.
+                    </p>
+
+                    <p>
+                        I'm early in that transition and still learning every day. Right now I'm looking for a
+                        role where I can keep building in a professional environment.
+                    </p>
+                    </div>
 				</div>
 			</FlipCard>
 		</div>
 
 
-		<div class="relative z-[40] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
+		<div class="w-full max-w-[400px] relative z-[40] transition-all duration-200 hover:z-[100] md:hover:scale-[1.05]">
 			<FlipCard title="Projects, Skills and Ideas"
-				color="#F7E7CE" darkColor="#3B3131" darkTitleColor="#ffffff" size="w-[400px] h-[600px]">
+				color="#FFF0DB" darkColor="#3B3131" darkTitleColor="#ffffff" size="w-full max-w-[400px] h-[880px] min-[380px]:h-[780px] min-[440px]:h-[600px]">
 				<div slot="back">
-                    <p>During my time at university, I have been involved in multiple projects, some of which were part of my studies, and some of which were personal projects. <br /> <br /> For university projects, I have used Python for both data analysis and automation of workflows using supervised learning for Plugin Development. <br /> <br />
-                    My personal projects include this website, built using Astro and Tailwind CSS, and trying to develop a small browser game using Typescript. For now I am only scratching the surface of what programming can do, but I am excited to learn more, find new challenges and improve my skills. <br /> <br />  
+                    <div class="space-y-4">
+                    <p>
+                        During my time at university, I've worked on a number of projects. Some of those projects were part
+                        of my studies, others personal.
+                    </p>
 
-                    I have decided the game idea was not up to par so I will start again with a new idea soon. 
-                    </p>                
+                    <p>
+                        I've used Python for data analysis and for automating
+                        workflows during my studies, including supervised learning and plugin development.
+                    </p>
+
+                    <p>
+                        My personal projects include this website, built with Astro and Tailwind CSS, and
+                        a small browser game in TypeScript. I've since decided that idea wasn't up to par,
+                        so I'm starting over with a new one.
+                    </p>
+
+                    <p>
+                        For now I'm only scratching the surface of what programming can do, but I'm excited
+                        to keep learning, find new challenges, and improve my skills.
+                    </p>
+                    </div>             
                 </div>
 			</FlipCard>
 		</div>
