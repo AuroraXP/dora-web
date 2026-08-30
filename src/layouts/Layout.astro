@@ -2,12 +2,78 @@
 // src/layouts/Layout.astro
 import "../styles/global.css";
 
+const SITE = "https://tmpiel.com";
+
 interface Props {
-	title: string;
+  title: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "Python developer with a chemistry background. Built an ML-based automation tool for crystal structure refinement and a prototype Olex2 plugin. M.Sc. Chemistry, RWTH Aachen. Looking for a junior software engineering role.",
+  image = "/og-image.png",
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, SITE);
+const ogImage = new URL(image, SITE);
+
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Teodora M. Piel",
+  givenName: "Teodora",
+  familyName: "Piel",
+  url: SITE,
+  description:
+    "Python developer with an M.Sc. in Chemistry from RWTH Aachen. Machine learning and automation for crystal structure refinement, including a prototype plugin for the Olex2 crystallography software. Looking for a junior software engineering role.",
+  email: "mailto:teodora.piel@rwth-aachen.de",
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "RWTH Aachen University",
+    sameAs: "https://www.rwth-aachen.de/",
+  },
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "degree",
+    educationalLevel: "Master of Science",
+    about: "Chemistry",
+    recognizedBy: {
+      "@type": "CollegeOrUniversity",
+      name: "RWTH Aachen University",
+    },
+  },
+  knowsAbout: [
+    "Python",
+    "Machine Learning",
+    "scikit-learn",
+    "Scientific Computing",
+    "Automation",
+    "Crystallography",
+    "Astro",
+    "TypeScript",
+    "Tailwind CSS",
+    "Git",
+  ],
+  knowsLanguage: [
+    { "@type": "Language", name: "German", alternateName: "de" },
+    { "@type": "Language", name: "English", alternateName: "en" },
+    { "@type": "Language", name: "Romanian", alternateName: "ro" },
+  ],
+  seeks: {
+    "@type": "Demand",
+    name: "Junior software engineering role",
+  },
+  sameAs: [
+    "https://www.linkedin.com/in/teodora-piel-199a18428",
+    "https://github.com/AuroraXP",
+  ],
+};
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,21 +82,43 @@ const { title } = Astro.props;
         ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       if (theme === 'dark') document.documentElement.classList.add('dark');
     </script>
+
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Teodora M. Piel" />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Teodora Piel" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <!-- <meta property="og:image" content={ogImage} /> -->
+    <meta property="og:image:alt" content="Teodora Piel — Python developer, M.Sc. Chemistry" />
+    <meta property="og:locale" content="en_US" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(person)} />
   </head>
+
   <body class="font-serif bg-[#ffffff] dark:bg-[#000000]">
-    
     <slot />
   </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
