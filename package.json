@@ -1,11 +1,12 @@
 {
-	"name": "my-second-site",
+	"name": "dora-web",
 	"type": "module",
 	"version": "0.0.1",
 	"engines": {
 		"node": ">=22.12.0"
 	},
 	"scripts": {
+		"preinstall": "npx only-allow pnpm",
 		"dev": "astro dev --host",
 		"build": "astro build",
 		"preview": "astro preview",
