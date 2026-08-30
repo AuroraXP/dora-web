@@ -27,12 +27,12 @@ const { front, back, alt = '', class: className = 'aspect-square' } = Astro.prop
 
     <!-- FRONT -->
     <div class="absolute inset-0 overflow-hidden rounded-lg bg-black backface-hidden shadow-xl shadow-black/30 dark:shadow-black/60 border border-black">
-      {front && <Image src={front} alt={alt} class="h-full w-full object-cover" />}
+      {front && <img src={front.src} alt={alt} class="h-full w-full object-cover" />}
     </div>
 
     <!-- BACK -->
     <div class="absolute inset-0 overflow-hidden rounded-lg bg-black backface-hidden rotate-y-180 shadow-xl shadow-black/30 dark:shadow-black/60 border border-black ">
-      {back && <Image src={back} alt="" class="h-full w-full object-cover" />}
+      {back && <img src={back.src} alt="" class="h-full w-full object-cover" />}
     </div>
 
   </div>

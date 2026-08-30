@@ -8,5 +8,5 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
 	integrations: [solidJs()],
 	vite: { plugins: [tailwindcss()] },
-	adapter: cloudflare({ imageService: "passthrough" }),
+	adapter: cloudflare(),
 });
