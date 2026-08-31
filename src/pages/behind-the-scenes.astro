@@ -1,15 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ModeChange from '../components/mode-change.astro';
+import ImageFlipCard from '../components/ImageFlipCard.astro';
 import FlipCard from '../components/FlipCard.astro';
 import MiniLight from '../assets/mini-me-dark.png';
 import MiniDark from '../assets/mini-me-light.png';
 import AngryMiniLight from '../assets/mini-annoyed-dark.png';
 import AngryMiniDark from '../assets/mini-annoyed-light.png';
-import FrontImage from '../assets/FrontImage.jpeg';
-import BackImage from '../assets/BackImage.jpg';
-import ImageFlipCard from '../components/ImageFlipCard.astro';
+import FrontImage from '../assets/front-image.jpeg';
+import BackImage from '../assets/back-image.jpg';
 
+import baking1 from '../photo-stories/baking/cookies.jpeg';
+import baking2 from '../photo-stories/baking/pizza-rolls.jpeg';
+import baking3 from '../photo-stories/baking/bread.jpeg';
+import baking4 from '../photo-stories/baking/brownies.jpeg';
+import baking5 from '../photo-stories/baking/cupcakes2.jpeg';
+
+import paint1 from '../photo-stories/paint/boat.jpeg';
+import paint2 from '../photo-stories/paint/gryphon.jpeg';
+import paint3 from '../photo-stories/paint/umbrella.jpeg';
+import paint4 from '../photo-stories/paint/siren.jpeg';
+import paint5 from '../photo-stories/paint/otter.jpeg';
 
 ---
 
@@ -33,14 +44,13 @@ import ImageFlipCard from '../components/ImageFlipCard.astro';
 
     <div class="flex flex-col items-center pt-12 pb-16">
 		<h1 class="mt-25  px-[10vw] text-[23px] text-left text-[#222222] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
-        	This page is still a work in progress. <br />
 			Here you will find my projects, hobbies and interests.<br />
 			Swipe through the cards to explore my work and click to learn more.
       	</h1>
 	</div>
   </div>
 
-<div class="relative bg-[#fff4e6] dark:bg-[#222222] pb-[12vw] md:pb-[8vw]">
+  <div class="relative bg-[#fff4e6] dark:bg-[#222222] pb-[12vw] md:pb-[8vw]">
 
 	<div class="flex items-center justify-center gap-[6vw]">
 
@@ -96,11 +106,16 @@ import ImageFlipCard from '../components/ImageFlipCard.astro';
 
 		<div class="relative z-50 transition-all duration-200 hover:z-100 hover:scale-[1.05]">
 			<FlipCard title="Painting" text="Where there is free time, there is art."
-				color="#FFEFD5" darkColor="#34282C">
-				<div slot="back"><p>Photo stories coming soon.</p></div>
+				color="#FFEFD5" darkColor="#34282C"				  
+				backImages={[
+								{ image: paint1},
+								{ image: paint2},
+								{ image: paint3},
+								{ image: paint4},
+								{ image: paint5},]}>
 			</FlipCard>
-			<!-- backBgImage={TestImage} backBgOpacity={1.0} -->
 		</div>
+
 		<div class="relative z-40 transition-all duration-200 hover:z-100 hover:scale-[1.05]">
 			<FlipCard title="Creative Writing" text="Exploring fantastical stories and narratives."
 				color="#F7E7CE" darkColor="#3B3131">
@@ -110,8 +125,14 @@ import ImageFlipCard from '../components/ImageFlipCard.astro';
 
 		<div class="relative z-30 transition-all duration-200 hover:z-100 hover:scale-[1.05]">
 			<FlipCard title="Baking" text="Creating delicious treats and breads. Chemistry in the kitchen."
-				color="#FFEBCD" darkColor="#343434">
-				<div slot="back"><p>Photo stories coming soon.</p></div>
+				color="#FFEBCD" darkColor="#343434" 
+				  backImages={[
+								{ image: baking1, caption: "Cookies" },
+								{ image: baking2, caption: "Pizza-Rolls" },
+								{ image: baking3, caption: "Bread" },
+								{ image: baking4, caption: "Brownies" },
+								{ image: baking5, caption: "Cupcakes" },
+							]}>
 			</FlipCard>
 		</div>
 
@@ -124,20 +145,6 @@ import ImageFlipCard from '../components/ImageFlipCard.astro';
 		</div>
 
 	</div>
-</div>
+  </div>
 
-<!-- <div class="relative bg-[#fff4e6] dark:bg-[#222222]">
-
-	<div class="max-w-max ml-auto mr-[15%]">
-	<div class="relative z-[20] transition-all duration-200 hover:z-[100] hover:scale-[1.05]">
-		<FlipCard"
-			color="#fff1e6" darkColor="#404042">
-			<div slot="back"><p></p></div>
-		</FlipCard>
-	</div>
-</div> -->
-<!-- </div> -->
-
-
-
-	</Layout>
+</Layout>
