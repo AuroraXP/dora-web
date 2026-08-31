@@ -1,46 +1,48 @@
-# Astro Starter Kit: Basics
+# Person Website Project
 
-```sh
-npm create astro@latest -- --template basics
+- About: Teodora M. Piel (Dora) - noticed the backpack? :)
+
+- The website is built using Astro and Tailwind CSS, and deployed on Cloudflare Pages
+
+- This website is meant not only as a portfolio, but also as a small side project of trying something new
+
+- Just like all personal sites, it will forever be in work and as I grow, it will grow with me.
+
+- Additional content, concerning recent activity is planned
+
+- Google Indexing is pending as if now
+
+
+**Layout**
+
+- Requires some tidying up
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
 ├── public/
 │   └── favicon.svg
+│   └── og-image.png
+│   └── TeodoraPielCV.pdf
 ├── src
+|   |── photo-stories (for behind the scenes)
+│   │   └── baking (images)
+│   │   └── paint (images)
 │   ├── assets
-│   │   └── astro.svg
+│   │   └── images
 │   ├── components
-│   │   └── Welcome.astro
+│   │   └── button.astro
+│   │   └── Card.astro
+│   │   └── FlipCard.astro
+│   │   └── ImageFlipCard.astro
+│   │   └── mode-change.astro
+│   │   └── row2.astro
+│   │   └── row3.astro
 │   ├── layouts
 │   │   └── Layout.astro
 │   └── pages
 │       └── index.astro
+│       └── behind-the-scenes.astro
+│       └── explore-reasoning.astro
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
