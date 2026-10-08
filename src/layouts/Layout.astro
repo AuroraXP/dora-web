@@ -1,5 +1,8 @@
 ---
 // src/layouts/Layout.astro
+import Sidebar from "../components/Sidebar.tsx";
+import "@fontsource-variable/instrument-sans/index.css";
+import "@fontsource/instrument-serif/index.css";
 import "../styles/global.css";
 
 const SITE = "https://tmpiel.com";
@@ -78,9 +81,9 @@ const person = {
 <html lang="en">
   <head>
     <script is:inline>
-      const theme = localStorage.getItem('theme')
-        ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      if (theme === 'dark') document.documentElement.classList.add('dark');
+      const theme = localStorage.getItem("theme")
+        ?? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      if (theme === "dark") document.documentElement.classList.add("dark");
     </script>
 
     <meta charset="UTF-8" />
@@ -109,8 +112,11 @@ const person = {
     <script type="application/ld+json" set:html={JSON.stringify(person)} />
   </head>
 
-  <body class="font-serif bg-[#ffffff] dark:bg-[#000000]">
-    <slot />
+  <body class="font-sans bg-white text-black dark:bg-black dark:text-white">
+    <Sidebar client:load />
+    <main class="min-h-screen md:pl-64">
+      <slot />
+    </main>
   </body>
 </html>
 
