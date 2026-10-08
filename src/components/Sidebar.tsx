@@ -18,11 +18,11 @@ export default function Sidebar() {
   return (
     <aside
     id="sidebar"
-    class={`fixed top-0 left-0 z-40 h-full w-64 bg-[#efe5d9] dark:bg-black text-black dark:text-white border-r p-6 pt-16 transition-transform duration-300 ${positionClass()}`}
+    class={`fixed top-0 left-0 z-40 h-full w-64 bg-[#f1eae3] dark:bg-black dark:text-white border-r border-gray-400 p-6  transition-transform duration-300 ${positionClass()}`}
     >
     <header class="mb-6">
-      <h1 class="font-cursive text-[23px]">Teodora Piel</h1>
-      <h2 class="text-gray-500">Software Developer & Computational Chemist</h2>
+      <h1 class="font-serif text-[30px]">Teodora Piel</h1>
+      <h2 class="font-sans text-[13px] text-transform uppercase text-gray-500">Software Developer & Chemist</h2>
 
     </header>
     <nav class="flex flex-col gap-4">
