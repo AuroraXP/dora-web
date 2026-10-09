@@ -12,8 +12,11 @@ interface Props {
 
 export default function FloatyMessage(props: Props) {
   const [currentMessageIndex, setCurrentMessageIndex] = createSignal(0);
+  
+  const [jumping, setJumping] = createSignal(false);
 
   const nextMessage = () => {
+    setJumping(true);
     setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % props.messages.length);
   };
 
@@ -33,6 +36,13 @@ export default function FloatyMessage(props: Props) {
 
       {/* fixed-size box: all four images stacked inside it */}
       <div class="motion-safe:animate-floaty relative h-36 w-36 -inset-x-4">
+        <div class="absolute inset-0" 
+        classList={{ "motion-safe:animate-jump": jumping() && !isAngry(),
+            "motion-safe:active:animate-vibrate": isAngry(),
+        }}
+        onAnimationEnd={() => setJumping(false)}>
+                    
+
         <button
           type="button"
           onClick={nextMessage}
@@ -49,6 +59,7 @@ export default function FloatyMessage(props: Props) {
         <img src={AngryMiniDark.src} alt="" class={imgClass}
           classList={{ hidden: true, "dark:block": isAngry() }} />
       </div>
+    </div>
     </div>
   );
 }

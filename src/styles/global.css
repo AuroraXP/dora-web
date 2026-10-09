@@ -14,4 +14,24 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-4px); }
   }
+
+  --animate-vibrate: vibrate 0.01s ease-in-out infinite;
+  @keyframes vibrate {
+    0%, 100% { transform: translateY(0); }
+    100% { transform: translateY(-8px); }
+  }
+
+  --animate-jump: jump 0.4s ease-in-out;
+
+  @keyframes jump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+  }
+
+      --animate-leave: leave 2s ease-in-out;
+  @keyframes leave {
+    0%, 100% { transform: translateX(0px); }
+    100% { transform: translateX(-2000px); }
+  }
+
 }
