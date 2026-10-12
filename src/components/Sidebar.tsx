@@ -1,13 +1,24 @@
 // src/components/Sidebar.tsx
-import { createSignal } from "solid-js";
+import { createSignal, For } from "solid-js";
 import FloatyMessage from "./FloatyMessage";
+
 
 
 
 
 const DESKTOP_QUERY = "(min-width: 768px)";
 
-export default function Sidebar() {
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Projects" },
+  { href: "/explore-reasoning", label: "Reasoning" },
+];
+
+interface Props { currentPath: string }
+
+export default function Sidebar(props:Props) {
+
 
   const [open, setOpen] = createSignal<boolean>(true);
 
@@ -19,6 +30,13 @@ export default function Sidebar() {
     return open() ? "translate-x-0" : "-translate-x-full";
   };
 
+    const clean = (p: string) => p.replace(/\/+$/, "") || "/";
+
+    const isActive = (href: string) => {
+      const path = clean(props.currentPath ?? "/");
+      return href === "/" ? path === "/" : path.startsWith(href);
+    };
+
   return (
     <aside
     id="sidebar"
@@ -26,7 +44,7 @@ export default function Sidebar() {
     >
     <header class="mb-6">
       <h1 class="font-serif text-[30px]">Teodora Piel</h1>
-      <h2 class="font-sans text-[13px] text-transform uppercase text-gray-500">Software Developer & Chemist</h2>
+      <h2 class="font-sans text-[13px] uppercase text-gray-700">Software Developer & Chemist</h2>
     </header>
 
     <FloatyMessage
@@ -49,12 +67,44 @@ export default function Sidebar() {
     />   
 
 
+<nav class="flex flex-col gap-1 pt-5 border-t border-gray-400">
+        <For each={links}>
+          {(link, i) => (
+            <a
+              href={link.href}
+              aria-current={isActive(link.href) ? "page" : undefined}
+              class="flex items-center gap-5 rounded-xl px-4 py-3 transition-colors"
+              classList={{
+                "bg-gray-900 text-white dark:bg-white dark:text-black": isActive(link.href),
+                "hover:bg-black/5 dark:hover:bg-white/10": !isActive(link.href),
+              }}
+            >
+              <span
+                class="text-sm tabular-nums"
+                classList={{
+                  "text-gray-400 dark:text-gray-500": isActive(link.href),
+                  "text-gray-500": !isActive(link.href),
+                }}
+              >
+                {String(i() + 1).padStart(2, "0")}
+              </span>
 
-    <nav class="flex flex-col gap-4 pt-5 border-t border-gray-400">
-        <a href="/">Home</a>
-        <a href="/projects">Projects</a>
-        <a href="/explore-reasoning">Reasoning</a>
-    </nav>
+              <span class="text-base font-medium">{link.label}</span>
+
+              <span
+                class="ml-auto"
+                classList={{
+                  "text-gray-300 dark:text-gray-600": isActive(link.href),
+                  "text-gray-500": !isActive(link.href),
+                }}
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </a>
+          )}
+        </For>
+      </nav>
     </aside>
   );
 }

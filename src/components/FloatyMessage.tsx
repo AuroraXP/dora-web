@@ -1,9 +1,12 @@
 // src/components/FloatyMessage.tsx
 import { createSignal } from "solid-js";
-import MiniLight from "../assets/mini-me-dark.png";
-import MiniDark from "../assets/mini-me-light.png";
+
 import AngryMiniLight from "../assets/mini-annoyed-dark.png";
 import AngryMiniDark from "../assets/mini-annoyed-light.png";
+
+import MiniLight from "../assets/mini-me-dark.png";
+import MiniDark from "../assets/mini-me-light.png";
+
 
 interface Props {
   alt: string;
@@ -17,7 +20,7 @@ export default function FloatyMessage(props: Props) {
 
   const nextMessage = () => {
     setJumping(true);
-    setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % props.messages.length);
+    setCurrentMessageIndex((i) =>  Math.min(i + 1, props.messages.length - 1));
   };
 
   const isAngry = () => currentMessageIndex() > props.messages.length - 6;

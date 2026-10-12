@@ -80,11 +80,13 @@ const person = {
 <!doctype html>
 <html lang="en">
   <head>
-    <script is:inline>
+    <!-- <script is:inline>
       const theme = localStorage.getItem("theme")
         ?? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
       if (theme === "dark") document.documentElement.classList.add("dark");
-    </script>
+    </script> -->
+
+    <!-- add it back in when dark is configured -->
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,8 +115,8 @@ const person = {
   </head>
 
   <body class="font-sans bg-white text-black dark:bg-black dark:text-white">
-    <Sidebar client:load />
-    <main class="min-h-screen md:pl-64">
+  <Sidebar client:load currentPath={Astro.url.pathname} />    
+  <main class="min-h-screen md:pl-64">
       <slot />
     </main>
   </body>
