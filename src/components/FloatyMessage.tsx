@@ -23,15 +23,19 @@ export default function FloatyMessage(props: Props) {
     setCurrentMessageIndex((i) =>  Math.min(i + 1, props.messages.length - 1));
   };
 
+
+  const isHello = () => currentMessageIndex() === 0;
   const isAngry = () => currentMessageIndex() > props.messages.length - 6;
 
   const imgClass = "absolute inset-0 h-full w-full object-contain pointer-events-none select-none";
 
+
+
   return (
-    <div class="flex flex-col items-start gap-4 pb-10 ">
+    <div class="flex flex-col items-start gap-4 pb-8 ">
       {/* fixed-size bubble: only the text inside changes */}
       <p
-        class="flex h-20 w-full items-center rounded-r-full rounded-tl-full border border-gray-400 px-4 text-[13px] bg-[#f7f3ea]"
+        class="flex h-20 w-fit self-center items-center rounded-r-2xl rounded-tl-2xl border border-gray-400 px-4 text-[13px] bg-[#f7f3ea]"
         aria-live="polite"
       >
         {props.messages[currentMessageIndex()]}
@@ -49,9 +53,12 @@ export default function FloatyMessage(props: Props) {
         <button
           type="button"
           onClick={nextMessage}
-          aria-label="Show next message"
+          aria-label="Say hello!"
+          title={isHello() ? "Say hello!" : isAngry() ? "Don't you dare!" : undefined}
           class="absolute inset-[20%] z-10 cursor-pointer rounded-full"
         />
+        
+
 
         <img src={MiniLight.src} alt={props.alt} class={imgClass}
           classList={{ hidden: isAngry(), "dark:hidden": true }} />
@@ -63,6 +70,8 @@ export default function FloatyMessage(props: Props) {
           classList={{ hidden: true, "dark:block": isAngry() }} />
       </div>
     </div>
+
+
     </div>
   );
 }

@@ -40,7 +40,7 @@ export default function Sidebar(props:Props) {
   return (
     <aside
     id="sidebar"
-    class={`fixed top-0 left-0 z-40 h-full w-64 bg-[#f1eae3] dark:bg-black dark:text-white border-r border-gray-400 p-6  transition-transform duration-300 ${positionClass()}`}
+    class={`fixed overflow-y-auto top-0 left-0 z-40 h-full w-64 bg-[#f1eae3] dark:bg-black dark:text-white border-r border-gray-400 p-6  transition-transform duration-300 ${positionClass()}`}
     >
     <header class="mb-6">
       <h1 class="font-serif text-[30px]">Teodora Piel</h1>
@@ -105,6 +105,26 @@ export default function Sidebar(props:Props) {
           )}
         </For>
       </nav>
+
+        
+      <div class="gap-4 pt-20 text-blue-900 flex flex-wrap">
+
+        <a href="mailto:quackium@proton.me" class="text-sm">Email</a>
+        <a href="TeodoraPielCV" class="text-sm">CV</a>
+        <a href="https://www.linkedin.com/in/teodora-piel-199a18428"class="text-sm">LinkedIn</a>
+        <a href="https://www.github.com/in/teodora-piel-199a18428"class="text-sm">GitHub</a>
+
+      </div>
+
+
+
+
+
     </aside>
+
+
+
+
+
   );
 }
