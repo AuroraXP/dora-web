@@ -9,120 +9,111 @@ import ModeChange from "../components/mode-change.astro";
 
 <Layout title="Teodora Piel — Software Developer & Computational Chemist">
 
-  <!-- Section 1: grows with its content -->
-<!-- <div class="lg:border-x-[15vw] lg:border-[#efd0b4] dark:border-[#1a3721] lg:w-full"> -->
+  <!-- Section 1: intro -->
+  <div class="relative bg-[#ffffff] dark:bg-[#000000]">
+	<!-- shared centered column -->
+	<div class="mx-auto w-full max-w-5xl px-6 md:px-10 pt-16 pb-16">
 
-  <div class="relative bg-[#ffffff] dark:bg-[#000000] ">
-	<ModeChange />
-    <div class="flex flex-col items-center pt-12 pb-16">
-	<h1 class="mt-25  px-[10vw] text-[23px] text-left text-[#222222] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
-        <!-- Welcome. Welcome.<br /> -->
-		This is Teodora Piel's personal website. In here you will find information about me, my experience, projects, as well as my thoughts and ideas. 
-		Feel free to explore and get in touch!
-      </h1>
-	<div class="flex flex-col items-center gap-[5vw]
-			sm:flex-row sm:justify-between sm:items-center pt-10 ">
-		<Button link="mailto:quackium@proton.me" text="Email" newTab />
-		<Button link="https://www.linkedin.com/in/teodora-piel-199a18428" text="LinkedIn" newTab />		
-		
-		
-	<!-- </div> -->
+		<!-- top bar: mode switch on the right -->
+		<div class="flex items-center justify-end gap-4">
+			<ModeChange />
+		</div>
 
-	<!-- <h2 class="w-full px-[10vw] mt-10 text-[23px] text-left left-0 text-[#222222] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
-        You want more Information? 
-		You can find my CV and GitHub profile below. 
-      </h2> -->
+		<h1 class="mt-12 text-[23px] text-left text-[#222222] dark:text-[#cccccc]">
+			This is Teodora Piel's personal website. In here you will find information about me, my experience, projects, as well as my thoughts and ideas.
+			Feel free to explore and get in touch!
+		</h1>
 
-	<!-- <div class="flex flex-col items-center gap-[5vw]
-			sm:flex-row sm:justify-between sm:items-center pt-10 "> -->
-	  	<Button link="https://github.com/AuroraXP" text="GitHub" newTab />
-		<Button link="TeodoraPielCV.pdf" text="CV" newTab />
-	</div>
-
-</div>
-
-
-
-  <!-- Section 2: starts immediately after -->
-	<div class="relative py-[10vw] bg-[#fff4e6] dark:bg-[#222222]">
-		<h2 class=" font-sans mt-3 text-[35px] px-[10vw] pl-[8vw]  text-[#160066] dark:text-[#ffffff] translate-y-[-4vw] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]
-	">
-		01 Academic Career
-		</h2>	
-		
-		<Row2 
-		col1="2024 - 2026" 
-		col2Top="RWTH Aachen University" 
-		col2Bottom="Master of Science in Chemistry" 
-		/>
-		
-		<Row2
-		col1="2020 - 2024" 
-		col2Top="RWTH Aachen University" 
-		col2Bottom="Bachelor of Science in Chemistry" 
-		/>
-	</div>	
-		<!-- Section 3: starts immediately after -->
-	<div class="relative min-h-screen bg-[#fff4e6] dark:bg-[#222222]">
-		<h2 class=" font-sans text-[35px] px-[10vw] pl-[8vw]  text-[#160066] dark:text-[#ffffff] translate-y-[-5vw] lg:max-w-[70vw] lg:mx-auto lg:px-[8vw]">
-		02 Work Experience
-		</h2>
-		<Row3
-		col1="November 2025 - Mai 2026" 
-		col2Top="RWTH Aachen University" 
-		col2Bottom="Master Thesis" 
-		col3="Automatization of crystallographic workflows using machine learning tools. 
-			Early Plugin development for the Olex2 Crystallography Software using Python." 
-		/>
-		<Row3 
-		col1="April 2025 - August 2025" 
-		col2Top="RWTH Aachen University" 
-		col2Bottom="Research Internship" 
-		col3="Benchmarking of a novel Partitioning Scheme for Crystal Refinement." 
-		/>
-		<Row3 
-		col1="March 2024 - October 2024" 
-		col2Top="RWTH Aachen University" 
-		col2Bottom="Research Assistant" 
-		col3="Coordination Chemistry & Ligand Synthesis." 
-		/>
-		<Row3 
-		col1="June 2024 - September 2024" 
-		col2Top="RWTH Aachen University" 
-		col2Bottom="Research Internship" 
-		col3="Solid-State Chemistry & Single-Crystal Synthesis." 
-		/>
-		<Row3 
-		col1="November 2023 - February 2024" 
-		col2Top="RWTH Aachen University" 
-		col2Bottom="Bachelor Thesis" 
-		col3="Synthesis and Characterization of Complexes for PET Scan Application." 
-		/>
-		<Row3 
-		col1="April 2023 - June 2023" 
-		col2Top="RWTH Aachen University" 
-		col2Bottom="Student Research Internship" 
-		col3="Solid-State Chemistry & Single-Crystal Synthesis." 
-		/>
-
-	</div>
-	<div class="relative bg-[#fff4e6] dark:bg-[#222222] pb-[5vw]">
-
-		<img src={Explorer.src} alt="Explorer" class="relative lg:max-w-[70vw] lg:mx-auto lg:pt-[5vw] translate-y-[1vw]
-				" />
-	<!-- <h1 class="text-[4.5vw] sm:text-[4vw] px-[8vw] lg:text-[2vw] text-left text-[#ffffff] dark:text-[#222222] translate-y-[-20vw]">
-			Master of Science in Chemistry
-		</h1> -->
-	<div class="relative py-[0.8vw] lg:py-[0.8vw] mt-[5vw] sm:mt-[-20vw] lg:mt-[-10vw]
-				bg-[#fff4e6] dark:bg-[#222222] dark:border-y-black sm:border-y-4
-				lg:max-w-[70vw] lg:mx-auto px-[8vw]">
-
-	<div class="flex flex-col items-center gap-2
-				sm:flex-row sm:justify-between sm:items-center">
-		<Button link="/behind-the-scenes" text="Behind the Scenes" />
-		<Button link="/explore-reasoning" text="Explore Reasoning" />
+		<div class="flex flex-col items-center gap-6 pt-10
+				sm:flex-row sm:justify-between">
+			<Button link="mailto:quackium@proton.me" text="Email" newTab />
+			<Button link="https://www.linkedin.com/in/teodora-piel-199a18428" text="LinkedIn" newTab />
+			<Button link="https://github.com/AuroraXP" text="GitHub" newTab />
+			<Button link="TeodoraPielCV.pdf" text="CV" newTab />
+		</div>
 	</div>
   </div>
-</div>
-</div>
+
+  <!-- Section 2: academic career -->
+  <div class="relative bg-[#fff4e6] dark:bg-[#222222] pt-16 pb-20">
+	<h2 class="mx-auto w-full max-w-5xl px-6 md:px-10 pb-8 font-sans text-[35px] text-[#160066] dark:text-[#ffffff]">
+		01 Academic Career
+	</h2>
+
+	<Row2
+		col1="2024 - 2026"
+		col2Top="RWTH Aachen University"
+		col2Bottom="Master of Science in Chemistry"
+	/>
+
+	<Row2
+		col1="2020 - 2024"
+		col2Top="RWTH Aachen University"
+		col2Bottom="Bachelor of Science in Chemistry"
+	/>
+  </div>
+
+  <!-- Section 3: work experience -->
+  <div class="relative bg-[#fff4e6] dark:bg-[#222222] pb-16">
+	<h2 class="mx-auto w-full max-w-5xl px-6 md:px-10 pb-8 font-sans text-[35px] text-[#160066] dark:text-[#ffffff]">
+		02 Work Experience
+	</h2>
+
+	<Row3
+		col1="November 2025 - Mai 2026"
+		col2Top="RWTH Aachen University"
+		col2Bottom="Master Thesis"
+		col3="Automatization of crystallographic workflows using machine learning tools.
+			Early Plugin development for the Olex2 Crystallography Software using Python."
+	/>
+	<Row3
+		col1="April 2025 - August 2025"
+		col2Top="RWTH Aachen University"
+		col2Bottom="Research Internship"
+		col3="Benchmarking of a novel Partitioning Scheme for Crystal Refinement."
+	/>
+	<Row3
+		col1="March 2024 - October 2024"
+		col2Top="RWTH Aachen University"
+		col2Bottom="Research Assistant"
+		col3="Coordination Chemistry & Ligand Synthesis."
+	/>
+	<Row3
+		col1="June 2024 - September 2024"
+		col2Top="RWTH Aachen University"
+		col2Bottom="Research Internship"
+		col3="Solid-State Chemistry & Single-Crystal Synthesis."
+	/>
+	<Row3
+		col1="November 2023 - February 2024"
+		col2Top="RWTH Aachen University"
+		col2Bottom="Bachelor Thesis"
+		col3="Synthesis and Characterization of Complexes for PET Scan Application."
+	/>
+	<Row3
+		col1="April 2023 - June 2023"
+		col2Top="RWTH Aachen University"
+		col2Bottom="Student Research Internship"
+		col3="Solid-State Chemistry & Single-Crystal Synthesis."
+	/>
+  </div>
+
+  <!-- Section 4: explorer image with the link bar overlapping its lower part -->
+  <div class="relative bg-[#fff4e6] dark:bg-[#222222] pb-16">
+	<div class="mx-auto w-full max-w-5xl">
+		<img src={Explorer.src} alt="Explorer" class="block w-full" />
+
+		<!-- negative margin in % = relative to the column width, so the overlap
+		     scales exactly with the image at any zoom or screen size -->
+		<div class="relative mt-8 sm:mt-[-20%] lg:mt-[-14%] py-3 px-6 md:px-10
+				bg-[#fff4e6] dark:bg-[#222222] dark:border-y-black sm:border-y-4">
+			<div class="flex flex-col items-center gap-2
+					sm:flex-row sm:justify-between">
+				<Button link="/behind-the-scenes" text="Behind the Scenes" />
+				<Button link="/explore-reasoning" text="Explore Reasoning" />
+			</div>
+		</div>
+	</div>
+  </div>
+
 </Layout>

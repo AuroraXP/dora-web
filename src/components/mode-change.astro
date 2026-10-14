@@ -2,13 +2,15 @@
 // src/components/mode-change.astro
 ---
 
-<p class="absolute text-[#343434] pt-[4vw] right-[5vw] dark:text-[#cccccc] lg:max-w-[70vw] lg:mx-auto">
-	<button
-		id="theme-toggle"
-		class="px-[3vw] py-[1vw] border border-black dark:border-white text-black dark:text-white z-0 hover:text-[#7d7d7d] dark:hover:text-[#aaaaaa] hover:scale-110 text-[23px] cursor-pointer">
-		Mode Switch <span id="theme-icon">☀️</span>
-	</button>
-</p>
+<button
+	id="theme-toggle"
+	class="inline-block whitespace-nowrap px-[1.3em] py-[0.4em] text-[23px] cursor-pointer
+		border border-black text-black
+		dark:border-white dark:text-white
+		hover:text-[#7d7d7d] dark:hover:text-[#aaaaaa]
+		hover:scale-110 transition-transform">
+	Mode Switch <span id="theme-icon">☀️</span>
+</button>
 
 <script>
 	const btn = document.getElementById('theme-toggle');
