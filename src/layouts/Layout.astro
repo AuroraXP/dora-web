@@ -80,13 +80,14 @@ const person = {
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- <script is:inline>
+    <script is:inline>
       const theme = localStorage.getItem("theme")
         ?? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      // if (theme === "dark") document.documentElement.classList.add("dark"); fix it later
       if (theme === "dark") document.documentElement.classList.add("dark");
-    </script> -->
 
-    <!-- add it back in when dark is configured -->
+    </script>
+
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -109,7 +110,7 @@ const person = {
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#161924" media="(prefers-color-scheme: dark)" />
 
     <script type="application/ld+json" set:html={JSON.stringify(person)} />
   </head>

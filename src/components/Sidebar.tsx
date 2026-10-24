@@ -1,7 +1,7 @@
 // src/components/Sidebar.tsx
 import { createSignal, For } from "solid-js";
 import FloatyMessage from "./FloatyMessage";
-
+import { ThemeSwitch } from "./ThemeSwitch";
 
 
 
@@ -59,10 +59,8 @@ export default function Sidebar(props:Props) {
         "I think you should stop now.",
         "Seriously, stop it.",
         "I said STOP IT!",
-        "Alright, I'll give you one more chance.",
+        "Alright, I am just going to ignore you now.",
         "...",
-        "...",
-
       ]}
     />   
 
@@ -117,8 +115,7 @@ export default function Sidebar(props:Props) {
       </div>
 
 
-
-
+      <ThemeSwitch/>
 
     </aside>
 

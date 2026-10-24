@@ -25,7 +25,7 @@ export default function FloatyMessage(props: Props) {
 
 
   const isHello = () => currentMessageIndex() === 0;
-  const isAngry = () => currentMessageIndex() > props.messages.length - 6;
+  const isAngry = () => currentMessageIndex() > props.messages.length - 5;
 
   const imgClass = "absolute inset-0 h-full w-full object-contain pointer-events-none select-none";
 
